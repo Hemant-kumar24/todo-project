@@ -1,0 +1,37 @@
+{% extends 'external_base.html' %}
+{% block title %}
+  <title>Todo App</title>
+  {% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to ToDoList App</h1>
+    <p class="lead">Organize your tasks and stay productive.</p>
+    <hr class="my-4">
+    <p>Get started now!</p>
+    <a class="btn btn-cta btn-lg btn-primary " href="{% url 'login' %}" role="button">Start Now</a>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-lg-4">
+      <div class="feature">
+        <h3>Easy to Use</h3>
+        <p>Simple and intuitive interface to manage your tasks effortlessly.</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature">
+        <h3>Organize Tasks</h3>
+        <p>Keep track of your tasks with categories, priorities, and due dates.</p>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="feature">
+        <h3>Stay Productive</h3>
+        <p>Set reminders and stay focused on what matters.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

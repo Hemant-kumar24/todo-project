@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}
+<title> Todo Lists</title>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="todo-container">
+      
+        <h1 class="text-center mb-4"><img src="/static/images/list.webp"  width="5%" alt="image">ToDo List ({{todos.count}})</h1>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Sr. No.</th>
+            <th scope="col">Task</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example tasks -->
+          {% for obj in todos %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{obj.task}}</td>
+            <td>{{obj.date}}</td>
+            <td>
+                
+              <div class="btn-group" role="group" aria-label="Task Status">
+                <a href="{% url 'update_todo' obj.id %}" class="btn mr-2 btn-sm btn-outline-warning status-btn">Update</a>
+                
+                <a href="{% url 'complete' obj.id %}" class="btn mr-2 btn-sm btn-outline-success status-btn">Completed</a>
+                <a href="{% url 'delete' obj.id %}" class="btn  btn-sm btn-outline-danger status-btn">Delete</a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{% url 'add_todo' %}" class="btn btn-primary btn-sm ">Add Todo</a>
+    </div>
+  </div>
+  <h1 class="text-center mb-4 "><img src="/static/images/list.webp"  width="5%" alt="image">Completed Tasks ({{completed_todos.count}})</h1>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Sr. No.</th>
+            <th scope="col">Task</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example tasks -->
+          {% for obj in completed_todos %}
+          <tr style="text-decoration: line-through red;">
+            <td>{{forloop.counter}}</td>
+            <td>{{obj.task}}</td>
+            <td>{{obj.date}}</td>
+            <td>
+                
+              <div class="btn-group" role="group" aria-label="Task Status">
+                <a href="{% url 'complete' obj.id %}" class="btn mr-2 btn-sm btn-success status-btn">Completed</a>
+                <a href="{% url 'delete' obj.id %}" class="btn  btn-sm btn-danger status-btn">Permanent Deleted</a>
+              </div>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'external_base.html' %}
+{% block title %}
+<title> About page</title>
+{% endblock %}
+{% block body %}
+<header class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4">About the To-Do Web Application</h1>
+        <p class="lead">Organize Your Tasks with Ease</p>
+    </div>
+</header>
+
+<section id="overview" class="py-5">
+    <div class="container">
+        <h2 class="text-center">Application Overview</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>About the Application</h3>
+                <p>
+                    The To-Do Web Application is designed to help users manage their tasks efficiently and effectively. 
+                    Whether you're managing personal tasks or work projects, this application provides an intuitive interface 
+                    to keep track of your to-dos, set priorities, and mark items as completed.
+                </p>
+                <p>
+                    Key features include task categorization, due dates, and customizable reminders. The application is built 
+                    with modern web technologies to ensure a responsive and seamless user experience.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="/static/images/screenshot.png" alt="To-Do Application Screenshot" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center">Key Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card bg-white p-4 rounded shadow">
+                    <h4>Task Management</h4>
+                    <p>Organize tasks with categories and set due dates to stay on top of deadlines.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card bg-white p-4 rounded shadow">
+                    <h4>Reminders & Notifications</h4>
+                    <p>Get notified about upcoming tasks and deadlines to ensure nothing is missed.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card bg-white p-4 rounded shadow">
+                    <h4>Responsive Design</h4>
+                    <p>Access your tasks from any device with a seamless, responsive interface.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="developer" class="py-5">
+    <div class="container">
+        <h2 class="text-center">About the Developer</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="https://via.placeholder.com/150" alt="Hemant Kumar" class="img-fluid rounded-circle shadow">
+            </div>
+            <div class="col-md-8">
+                <h3>Hemant Kumar</h3>
+                <p>
+                    Hello, I'm Hemant Kumar, the developer behind this To-Do Web Application. With a passion for web development 
+                    and a keen interest in creating user-friendly solutions, I've designed this application to meet the needs of 
+                    individuals and teams alike. My goal is to provide a tool that enhances productivity and helps users stay organized.
+                </p>
+                <p>
+                    I have experience in both front-end and back-end development, and I'm always eager to learn and explore new 
+                    technologies. If you have any questions or feedback, feel free to reach out!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

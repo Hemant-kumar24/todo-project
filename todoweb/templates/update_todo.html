@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+<title> Update ToDo</title>
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="todo-form">
+      <h1 class="text-center mb-4">update task ->{{todo.task}} </h1>
+
+      <form id="todoForm" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="taskInput">Task Description</label>
+          <input type="text" name="task" class="form-control" id="taskInput" placeholder="Enter task description" value="{{todo.task}}" required>
+        </div>
+        <div class="form-group">
+          <label for="dateInput">Due Date</label>
+          <input type="date" name="date" class="form-control" id="dateInput">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Task</button>
+      </form>
+      
+
+    </div>
+  </div>
+
+{% endblock %}
